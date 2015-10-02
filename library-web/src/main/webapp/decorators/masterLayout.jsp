@@ -29,6 +29,7 @@ limitations under the License.
 <body>
 <div id='page'>
   <div id='header'>
+
     <h3>Master</h3>
     <a href="${cxPath}/master/masterItemsAction.action">List all Item</a> |
     <a href="${cxPath}/master/masterCustomersAction.action">List all Customer</a>
