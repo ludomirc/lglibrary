@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="welcomeAction" />
+        <action name="welcomeAction" class="com.lg.servlet.library.action.WelcomeAction">
+            <result>/public/welcome.jsp</result>
+        </action>
+    </package>
+
+    <package name="master" namespace="/master" extends="struts-default">
+        <action name="masterItemsAction" class="com.lg.servlet.library.action.master.ItemsAction" method="listAllItems">
+            <result name="success">/public/master/masterItems.jsp</result>
+            <result name="failure">/public/master/masterItems.jsp</result>
+        </action>
+        <action name="masterCustomersAction" class="com.lg.servlet.library.action.master.CustomersAction" method="listAllCustomers">
+            <result name="success">/public/master/masterCustomers.jsp</result>
+            <result name="failure">/public/master/masterCustomers.jsp</result>
+        </action>
+    </package>
+
+    <package name="rentalStatusBoard" namespace="/rental/status/board" extends="struts-default">
+       <action name="rentalStatusBoardAction" class="com.lg.servlet.library.action.rental.RentalStatusBoardAction">
+           <result name="success">/public/rentalStatusBoard/rentalStatusBoard.jsp</result>
+           <result name="failure">/public/rentalStatusBoard/rentalStatusBoard.jsp</result>
+       </action>
+    </package>
+</struts>
